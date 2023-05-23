@@ -15,6 +15,9 @@ hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
+            .stApp [data-testid="stToolbar"]{
+                display:none;
+            }
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
@@ -27,6 +30,8 @@ st.write(
 )
 
 user_agent = streamlit_js_eval.get_user_agent()
+while user_agent is None:
+    pass
 bMoile = 'Android' in user_agent or 'iOS' in user_agent
 # st.write(user_agent)
 
