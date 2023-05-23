@@ -1,0 +1,6 @@
+akshare
+pandas
+requests
+plotly
+streamlit
+streamlit_js_eval
