@@ -4,4 +4,4 @@ plotly
 PyMuPDF
 requests
 streamlit
-streamlit_js_eval
+
