@@ -15,7 +15,7 @@ hide_streamlit_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             div[data-testid="stToolbar"]{visibility: hidden;}
-            div[class^="viewerBadge_link"]{visibility: hidden;}
+            div[class^="viewerBadge_link"]{hidden: true;}
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
@@ -23,7 +23,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.write(
     """展示指定A股的相关研究报告，网上的信息来源，可能存在错误"""
 )
-@st.cache_data
+@st.cache_data(show_spinner=False, ttl=12*3600)
 def get_A_stocklist():
     return ak.stock_info_a_code_name()
 
@@ -40,7 +40,7 @@ def displayContent(file):
 # 包含公告链接接
 # https://wxly.p5w.net/api/data/getresearchreportlist?code=000001
 # 研报链接
-@st.cache_data
+@st.cache_data(show_spinner=False, ttl=12*3600)
 def get_3rd_report(stockcode, f_date='20220331'):
     url = f"https://wxly.p5w.net/api/data/getresearchreportlist?code={stockcode}" 
     response = requests.get(url)
