@@ -12,7 +12,7 @@ st.set_page_config(page_title="公司公告演示", page_icon="🌍")
 st.markdown("# 公司财报")
 st.markdown("沪深A股公告类展示")
 
-if st.secrets["showmenu"] != '0':
+if st.secrets["showmenu"] != '1':
     hide_streamlit_style = """
                 <style>
                 #MainMenu {visibility: hidden;}
@@ -97,7 +97,7 @@ def displayPDF(file):
 #     st.markdown(pdf_display, unsafe_allow_html=True)
     images = PDF2images(file)
     if lastpage := (len(images) - 1):
-        prev, _, next = st.columns([1, 3, 1])
+        prev, _, next = st.columns([1, 2, 1])
         if next.button("下一页 ⏭️"):
             if st.session_state.page_number + 1 > lastpage:
                 st.session_state.page_number = 0

@@ -11,7 +11,7 @@ st.set_page_config(page_title="公司三方研报演示", page_icon="📊")
 st.markdown("# 公司相关研究报告")
 st.markdown("沪深A股第三方研报类展示")
 
-if st.secrets["showmenu"] != '0':
+if st.secrets["showmenu"] != '1':
     hide_streamlit_style = """
                 <style>
                 #MainMenu {visibility: hidden;}

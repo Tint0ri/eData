@@ -10,7 +10,7 @@ st.set_page_config(page_title="股市行情演示", page_icon="📈")
 st.markdown("# 行情走势")
 st.markdown("沪深A股行情及公司概况演示")
 
-if st.secrets["showmenu"] != '0':
+if st.secrets["showmenu"] != '1':
     hide_streamlit_style = """
                 <style>
                 #MainMenu {visibility: hidden;}
@@ -141,7 +141,7 @@ try:
                             'distribution':'发行方式',
                            }, inplace=True)
         style = df.T.style.hide(axis=1)
-        style.set_table_styles([dict(selector='th', props='min-width: 120px;'),])
+        style.set_table_styles([dict(selector='th', props='min-width: 100px;'),])
         st.write(style.to_html(), unsafe_allow_html=True)
         # st.dataframe(df.T)
 
