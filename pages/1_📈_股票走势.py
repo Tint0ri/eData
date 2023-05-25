@@ -141,7 +141,7 @@ try:
                             'distribution':'发行方式',
                            }, inplace=True)
         style = df.T.style.hide(axis=1)
-        style.set_table_styles([dict(selector='th', props='min-width: 90px;'),])
+        style.set_table_styles([dict(selector='th', props='min-width: 100px;'),])
         st.write(style.to_html(), unsafe_allow_html=True)
         # st.dataframe(df.T)
 
