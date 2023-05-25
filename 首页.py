@@ -4,8 +4,7 @@ st.set_page_config(
     page_title="说明",
 )
 
-st.write(st.secrets)
-if st.secrets["showmenu"] != '0':
+if st.secrets["showmenu"] != '1':
     hide_streamlit_style = """
                 <style>
                 #MainMenu {visibility: hidden;}
