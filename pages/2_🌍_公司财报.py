@@ -4,7 +4,7 @@ import urllib
 from urllib.error import URLError
 import pandas as pd
 import akshare as ak
-import streamlit_js_eval
+# import streamlit_js_eval
 import fitz
 
 st.set_page_config(page_title="公司公告演示", page_icon="🌍")
@@ -29,13 +29,13 @@ st.write(
     """
 )
 
-user_agent = streamlit_js_eval.get_user_agent()
+# user_agent = streamlit_js_eval.get_user_agent()
 if 'page_number' not in st.session_state:
     st.session_state.page_number = 0
 
-while user_agent is None:
-    pass
-bMoile = 'Android' in user_agent or 'iOS' in user_agent
+# while user_agent is None:
+    # pass
+# bMoile = 'Android' in user_agent or 'iOS' in user_agent
 # st.write(user_agent)
 
 @st.cache_data(show_spinner=False, ttl=12*3600)
