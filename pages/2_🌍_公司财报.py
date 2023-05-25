@@ -97,7 +97,7 @@ def displayPDF(file):
 #     st.markdown(pdf_display, unsafe_allow_html=True)
     images = PDF2images(file)
     if lastpage := (len(images) - 1):
-        prev, next = st.columns(2)
+        prev, next = st.columns([1,4])
         if next.button("下一页 ⏭️"):
             if st.session_state.page_number + 1 > lastpage:
                 st.session_state.page_number = 0
