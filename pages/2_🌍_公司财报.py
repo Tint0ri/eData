@@ -12,16 +12,16 @@ st.set_page_config(page_title="公司公告演示", page_icon="🌍")
 st.markdown("# 公司财报")
 st.markdown("沪深A股公告类展示")
 
-            # div[data-testid="stToolbar"]{visibility: hidden;}
-            # div[class^="viewerBadge_link"]{hidden: true;}
-
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+if st.secrets["showmenu"] != '0':
+    hide_streamlit_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                div[data-testid="stToolbar"]{visibility: hidden;}
+                div[class^="viewerBadge_link"]{hidden: true;}
+                </style>
+                """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 st.write(
     """

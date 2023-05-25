@@ -10,15 +10,17 @@ st.set_page_config(page_title="公司三方研报演示", page_icon="📊")
 
 st.markdown("# 公司相关研究报告")
 st.markdown("沪深A股第三方研报类展示")
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            div[data-testid="stToolbar"]{visibility: hidden;}
-            div[class^="viewerBadge_link"]{hidden: true;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
+if st.secrets["showmenu"] != '0':
+    hide_streamlit_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                div[data-testid="stToolbar"]{visibility: hidden;}
+                div[class^="viewerBadge_link"]{hidden: true;}
+                </style>
+                """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 st.write(
     """展示指定A股的相关研究报告，网上的信息来源，可能存在错误"""

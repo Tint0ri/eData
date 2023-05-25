@@ -10,15 +10,16 @@ st.set_page_config(page_title="股市行情演示", page_icon="📈")
 st.markdown("# 行情走势")
 st.markdown("沪深A股行情及公司概况演示")
 
-# hide_streamlit_style = """
-#             <style>
-#             #MainMenu {visibility: hidden;}
-#             footer {visibility: hidden;}
-#             div[data-testid="stToolbar"]{visibility: hidden;}
-#             div[class^="viewerBadge_link"]{hidden: true;}
-#             </style>
-#             """
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+if st.secrets["showmenu"] != '0':
+    hide_streamlit_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                div[data-testid="stToolbar"]{visibility: hidden;}
+                div[class^="viewerBadge_link"]{hidden: true;}
+                </style>
+                """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 @st.cache_data(show_spinner=False, ttl=12*3600)
 def get_A_stocklist():
