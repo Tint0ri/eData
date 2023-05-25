@@ -1,6 +1,7 @@
 akshare
-pandas
-requests
+pandas >= 1.4
 plotly
+PyMuPDF
+requests
 streamlit
 streamlit_js_eval

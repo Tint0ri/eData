@@ -4,9 +4,17 @@ st.set_page_config(
     page_title="说明",
 )
 
-st.write("# 这是一个金融信息提供平台的演示")
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             div[data-testid="stToolbar"]{visibility: hidden;}
+#             div[class^="viewerBadge_link"]{hidden: true;}
+#             </style>
+#             """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-# st.sidebar.success("选择需要查询的信息")
+st.write("# 这是一个金融信息提供平台的演示")
 
 st.markdown(
     """
@@ -23,14 +31,5 @@ st.markdown(
 """
 )
 
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            div[data-testid="stToolbar"]{visibility: hidden;}
-            div[class^="viewerBadge_link"]{visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 
