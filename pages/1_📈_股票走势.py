@@ -16,7 +16,7 @@ if st.secrets["showmenu"] != '1':
                 #MainMenu {visibility: hidden;}
                 footer {visibility: hidden;}
                 div[data-testid="stToolbar"]{visibility: hidden;}
-                div[class^="viewerBadge_link"]{hidden: true;}
+                div[class^="viewerBadge_link"]{visibility: hidden;}
                 </style>
                 """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
@@ -141,7 +141,7 @@ try:
                             'distribution':'发行方式',
                            }, inplace=True)
         style = df.T.style.hide(axis=1)
-        style.set_table_styles([dict(selector='th', props='min-width: 100px;'),])
+        style.set_table_styles([dict(selector='th', props='min-width: 90px;'),])
         st.write(style.to_html(), unsafe_allow_html=True)
         # st.dataframe(df.T)
 

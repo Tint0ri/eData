@@ -17,7 +17,7 @@ if st.secrets["showmenu"] != '1':
                 #MainMenu {visibility: hidden;}
                 footer {visibility: hidden;}
                 div[data-testid="stToolbar"]{visibility: hidden;}
-                div[class^="viewerBadge_link"]{hidden: true;}
+                div[class^="viewerBadge_link"]{visibility: hidden;}
                 </style>
                 """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
