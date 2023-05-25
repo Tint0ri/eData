@@ -1,9 +1,11 @@
 import streamlit as st
+import streamlit_js_eval
 
 st.set_page_config(
     page_title="说明",
 )
 
+streamlit_js_eval("document.querySelectorAll('#root > div:nth-child(1) > div > div > a > div')[0].hidden=true")
 if st.secrets["showmenu"] != '1':
     hide_streamlit_style = """
                 <style>
